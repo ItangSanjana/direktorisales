@@ -1,0 +1,137 @@
+<!-- Copyright 2019 Itang Sanjana -->
+<!doctype html>
+<html lang="id">
+    <head>
+        <!-- Charset -->
+        <meta charset="utf-8">
+        <!-- Title -->
+        <title>Offline | Direktori Sales</title>
+        <!-- Description -->
+        <meta name="description" content="Halaman offline Direktori sales &amp; marketing.">
+        <!-- Robots -->
+        <meta name="robots" content="noindex">
+        <!-- Theme color -->
+        <meta name="theme-color" content="#fff">
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- HumansTxt -->
+        <link href="/humans.txt" rel="author" type="text/plain">
+        <!-- Web Application Manifest -->
+        <link href="/manifest.json" rel="manifest">
+        <!-- Preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://unpkg.com" crossorigin>
+        <!-- styles preload -->
+        <link as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="preload">
+        <link as="style" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="preload">
+        <link as="style" href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css" rel="preload">
+        <link as="style" href="/offline/style.css" rel="preload">
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css" rel="stylesheet">
+        <link href="/offline/style.css" rel="stylesheet">
+    </head>
+    <body class="mdc-typography">
+        <!-- Content -->
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <button class="material-icons-outlined mdc-top-app-bar__navigation-icon mdc-icon-button" aria-hidden="true">menu</button>
+                    <a class="mdc-top-app-bar__title" href="/">Direktori Sales</a>
+                </section>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                    <button class="material-icons-outlined mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bagikan" title="Bagikan" disabled>share</button>
+                    <button class="material-icons-outlined mdc-top-app-bar__action-item mdc-icon-button" aria-label="Masuk dengan Google" title="Masuk dengan Google" disabled>account_circle</button>
+                </section>
+            </div>
+        </header>
+        <aside class="mdc-drawer mdc-drawer--modal">
+            <div class="mdc-drawer__header">
+                <strong class="mdc-drawer__title">Direktori Sales</strong>
+            </div>
+            <div class="mdc-drawer__content">
+                <nav class="mdc-list">
+                    <a class="mdc-list-item" href="/">
+                        <i class="material-icons-outlined mdc-list-item__graphic" aria-hidden="true">home</i>
+                        <span class="mdc-list-item__text">Beranda</span>
+                    </a>
+                    <a class="mdc-list-item" href="/sales">
+                        <i class="material-icons-outlined mdc-list-item__graphic" aria-hidden="true">folder_shared</i>
+                        <span class="mdc-list-item__text">Sales</span>
+                    </a>
+                    <a class="mdc-list-item" href="/blog">
+                        <i class="material-icons-outlined mdc-list-item__graphic" aria-hidden="true">rss_feed</i>
+                        <span class="mdc-list-item__text">Blog</span>
+                    </a>
+                    <span tabindex="0"></span>
+                </nav>
+            </div>
+        </aside>
+        <div class="mdc-drawer-scrim"></div>
+        <main class="mdc-top-app-bar--fixed-adjust">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+                        <figure>
+                            <img alt="Logo Direktori Sales" src="/logo.png" height="192" width="192" loading="lazy">
+                        </figure>
+                        <h1 class="mdc-typography--headline5">Offline | Direktori Sales</h1>
+                        <p class="mdc-typography--subtitle1">Halaman offline Direktori sales &amp; marketing</p>
+                    </section>
+                    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+                        <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                            <div class="mdc-linear-progress__buffering-dots"></div>
+                            <div class="mdc-linear-progress__buffer"></div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner mdc-list-group">
+                <div class="mdc-layout-grid__cell">
+                    <i class="mdc-typography--body2">Hak cipta &copy 2019. Itang Sanjana</i>
+                </div>
+            </div>
+        </footer>
+        <!-- Utils -->
+        <div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label" role="status" aria-live="polite"></div>
+                <div class="mdc-snackbar__actions">
+                    <button type="button" class="mdc-button mdc-snackbar__action">Tutup</button>
+                </div>
+            </div>
+        </div>
+        <!-- Templates -->
+        <template>
+            <a class="mdc-top-app-bar__action-item mdc-icon-button" rel="nofollow"><img height="24" width="24" loading="lazy"></a>
+        </template>
+        <template>
+            <ul class="mdc-layout-grid__inner">
+                <li class="mdc-layout-grid__cell mdc-card mdc-card--outlined">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <div class="mdc-card__media-content material-icons-outlined">cloud_off</div>
+                        </div>
+                    </div>
+                    <a class="mdc-card__actions mdc-button mdc-card__action mdc-card__action--button">
+                        <span class="mdc-button__label"></span>
+                        <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">arrow_forward</i>
+                    </a>
+                </li>
+            </ul>
+        </template>
+        <!-- Scripts -->
+        <script defer src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script>
+        <script defer src="/offline/script.js"></script>
+    </body>
+</html>
