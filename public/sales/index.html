@@ -1,0 +1,858 @@
+<!-- Copyright 2019 Itang Sanjana -->
+<!doctype html>
+<html lang="id">
+    <head>
+        <!-- Charset -->
+        <meta charset="utf-8">
+        <!-- Title -->
+        <title>Sales | Direktori Sales</title>
+        <!-- Description -->
+        <meta name="description" content="Temukan sales &amp; marketing resmi sesuai kebutuhan Anda.">
+        <!-- Theme color -->
+        <meta name="theme-color" content="#fff">
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- HumansTxt -->
+        <link href="/humans.txt" rel="author" type="text/plain">
+        <!-- Web Application Manifest -->
+        <link href="/manifest.json" rel="manifest">
+        <!-- Preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://unpkg.com" crossorigin>
+        <!-- Styles preload -->
+        <link as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="preload">
+        <link as="style" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="preload">
+        <link as="style" href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css" rel="preload">
+        <link as="style" href="/sales/style.css" rel="preload">
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css" rel="stylesheet">
+        <link href="/sales/style.css" rel="stylesheet">
+    </head>
+    <body class="mdc-typography">
+        <!-- Content -->
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <button class="material-icons-outlined mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+                    <a class="mdc-top-app-bar__title" href="/">Direktori Sales</a>
+                </section>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                    <button class="material-icons-outlined mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bagikan" title="Bagikan" disabled>share</button>
+                    <button class="material-icons-outlined mdc-top-app-bar__action-item mdc-icon-button" aria-label="Masuk dengan Google" title="Masuk dengan Google" disabled>account_circle</button>
+                </section>
+            </div>
+        </header>
+        <aside class="mdc-drawer mdc-drawer--modal">
+            <div class="mdc-drawer__header">
+                <strong class="mdc-drawer__title">Direktori Sales</strong>
+            </div>
+            <div class="mdc-drawer__content">
+                <nav class="mdc-list">
+                    <a class="mdc-list-item" href="/">
+                        <i class="material-icons-outlined mdc-list-item__graphic" aria-hidden="true">home</i>
+                        <span class="mdc-list-item__text">Beranda</span>
+                    </a>
+                    <a class="mdc-list-item mdc-list-item--activated" aria-current="page" href="/sales">
+                        <i class="material-icons-outlined mdc-list-item__graphic" aria-hidden="true">folder_shared</i>
+                        <span class="mdc-list-item__text">Sales</span>
+                    </a>
+                    <a class="mdc-list-item" href="/blog">
+                        <i class="material-icons-outlined mdc-list-item__graphic" aria-hidden="true">rss_feed</i>
+                        <span class="mdc-list-item__text">Blog</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+        <div class="mdc-drawer-scrim"></div>
+        <main class="mdc-top-app-bar--fixed-adjust">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+                        <figure>
+                            <img alt="Logo Direktori Sales" src="/logo.png" height="192" width="192" loading="lazy">
+                        </figure>
+                        <h1 class="mdc-typography--headline5">Sales</h1>
+                        <p class="mdc-typography--subtitle1">Temukan sales &amp; marketing sesuai kebutuhan Anda</p>
+                    </section>
+                    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+                        <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                            <div class="mdc-linear-progress__buffering-dots"></div>
+                            <div class="mdc-linear-progress__buffer"></div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner mdc-list-group">
+                <div class="mdc-layout-grid__cell">
+                    <i class="mdc-typography--body2">Hak cipta &copy 2019. Itang Sanjana</i>
+                </div>
+            </div>
+        </footer>
+        <!-- Utils -->
+        <div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label" role="status" aria-live="polite"></div>
+                <div class="mdc-snackbar__actions">
+                    <button type="button" class="mdc-button mdc-snackbar__action">Tutup</button>
+                </div>
+            </div>
+        </div>
+        <!-- Templates -->
+        <template>
+            <a class="mdc-top-app-bar__action-item mdc-icon-button" rel="nofollow"><img height="24" width="24" loading="lazy"></a>
+        </template>
+        <template>
+            <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+                <form class="mdc-layout-grid__inner" name="salesFilter">
+                    <div class="mdc-layout-grid__cell mdc-select">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <select class="mdc-select__native-control" name="merek">
+                            <option value="" disabled selected></option>
+                        </select>
+                        <label class="mdc-floating-label">Pilih Merek</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-select">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <select class="mdc-select__native-control" name="kota">
+                            <option value="" disabled selected></option>
+                        </select>
+                        <label class="mdc-floating-label">Pilih Kota</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <button class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-button mdc-button--outlined">
+                        <span class="mdc-button__label">Saring</span>
+                    </button>
+                </form>
+            </section>
+        </template>
+        <template>
+            <ul class="mdc-layout-grid__inner"></ul>
+        </template>
+        <template>
+            <li class="mdc-layout-grid__cell mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--16-9">
+                        <div class="mdc-card__media-content"><img height="96" width="96" loading="lazy"></div>
+                    </div>
+                </div>
+                <a class="mdc-card__actions mdc-card__actions--full-bleed mdc-card__action mdc-card__action--button mdc-button">
+                    <span class="mdc-button__label"></span>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">arrow_forward</i>
+                </a>
+            </li>
+        </template>
+        <template>
+            <article class="mdc-card mdc-card--outlined">
+                <div class="mdc-list-group">
+                    <h3 class="mdc-list-group__subheader">Kontak</h3>
+                    <div class="mdc-list mdc-list--avatar-list mdc-list--two-line">
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">phone</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">Telepon</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">sms</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">SMS</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">chat</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">WhatsApp</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">email</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">Email</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                    </div>
+                    <h3 class="mdc-list-group__subheader">Profil</h3>
+                    <div class="mdc-list mdc-list--avatar-list mdc-list--two-line">
+                        <a class="mdc-list-item" target="_blank" rel="noopener noreferrer">
+                            <i class="mdc-list-item__graphic material-icons-outlined">store</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">Dealer</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">category</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">Kategori</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">label</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">Merek</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                        <a class="mdc-list-item">
+                            <i class="mdc-list-item__graphic material-icons-outlined">place</i>
+                            <span class="mdc-list-item__text">
+                                <span class="mdc-list-item__primary-text"></span>
+                                <span class="mdc-list-item__secondary-text">Area pemasaran</span>
+                            </span>
+                            <i class="mdc-list-item__meta material-icons-outlined">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </template>
+        <template>
+            <form class="mdc-card mdc-card--outlined" name="salesData">
+                <div>
+                    <div class="mdc-text-field">
+                        <input type="tel" id="nomorTelepon" class="mdc-text-field__input" name="nomorTelepon" required>
+                        <label class="mdc-floating-label" for="nomorTelepon">Nomor Telepon</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="mdc-text-field">
+                        <input type="tel" id="nomorWhatsApp" class="mdc-text-field__input" name="nomorWhatsApp">
+                        <label class="mdc-floating-label" for="nomorWhatsApp">Nomor WhatsApp (Kosongkan jika sama dengan nomor telepon.)</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="mdc-text-field">
+                        <input type="text" id="dealer" class="mdc-text-field__input" name="dealer" required>
+                        <label class="mdc-floating-label" for="dealer">Dealer Anda Bekerja</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="mdc-select">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <select class="mdc-select__native-control" data-parent="kategori" name="merek" required>
+                            <optgroup label>
+                                <option value="" disabled selected></option>
+                            </optgroup>
+                        </select>
+                        <label class="mdc-floating-label">Pilih Merek</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="mdc-select ds-select--multiple">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <select class="mdc-select__native-control" data-parent="provinsi" multiple name="kota" required size="11">
+                            <optgroup label>
+                                <option value="" disabled></option>
+                            </optgroup>
+                        </select>
+                        <label class="mdc-floating-label">Pilih Kota</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                </div>
+            </form>
+        </template>
+        <template>
+            <div class="mdc-card__actions"></div>
+        </template>
+        <template>
+            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                <span class="mdc-button__label"></span>
+            </button>
+        </template>
+        <template>
+            <optgroup label="Mobil">
+                <option value="BMW">BMW</option>
+                <option value="Datsun">Datsun</option>
+                <option value="Dihatsu">Dihatsu</option>
+                <option value="Honda">Honda</option>
+                <option value="Isuzu">Isuzu</option>
+                <option value="KIA">KIA</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Wuling">Wuling</option>
+            </optgroup>
+            <optgroup label="Motor">
+                <option value="Honda">Honda</option>
+                <option value="Kawasaki">Kawasaki</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="TVS">TVS</option>
+                <option value="Vespa">Vespa</option>
+                <option value="Yamaha">Yamaha</option>
+            </optgroup>
+        </template>
+        <template>
+            <optgroup label="Bali">
+                <option value="Badung">Badung</option>
+                <option value="Bangli">Bangli</option>
+                <option value="Buleleng">Buleleng</option>
+                <option value="Denpasar">Denpasar</option>
+                <option value="Gianyar">Gianyar</option>
+                <option value="Jembrana">Jembrana</option>
+                <option value="Karangasem">Karangasem</option>
+                <option value="Klungkung">Klungkung</option>
+                <option value="Tabanan">Tabanan</option>
+            </optgroup>
+            <optgroup label="Bangka Belitung">
+                <option value="Bangka">Bangka</option>
+                <option value="Bangka Barat">Bangka Barat</option>
+                <option value="Bangka Selatan">Bangka Selatan</option>
+                <option value="Bangka Tengah">Bangka Tengah</option>
+                <option value="Belitung">Belitung</option>
+                <option value="Belitung Timur">Belitung Timur</option>
+                <option value="Pangkal Pinang">Pangkal Pinang</option>
+            </optgroup>
+            <optgroup label="Banten">
+                <option value="Cilegon">Cilegon</option>
+                <option value="Lebak">Lebak</option>
+                <option value="Pandeglang">Pandeglang</option>
+                <option value="Serang">Serang</option>
+                <option value="Tangerang">Tangerang</option>
+                <option value="Tangerang Selatan">Tangerang Selatan</option>
+            </optgroup>
+            <optgroup label="Bengkulu">
+                <option value="Bengkulu">Bengkulu</option>
+                <option value="Bengkulu Selatan">Bengkulu Selatan</option>
+                <option value="Bengkulu Tengah">Bengkulu Tengah</option>
+                <option value="Bengkulu Utara">Bengkulu Utara</option>
+                <option value="Kaur">Kaur</option>
+                <option value="Kepahiang">Kepahiang</option>
+                <option value="Lebong">Lebong</option>
+                <option value="Muko Muko">Muko Muko</option>
+                <option value="Rejang Lebong">Rejang Lebong</option>
+                <option value="Seluma">Seluma</option>
+            </optgroup>
+            <optgroup label="DI Yogyakarta">
+                <option value="Bantul">Bantul</option>
+                <option value="Gunung Kidul">Gunung Kidul</option>
+                <option value="Kulon Progo">Kulon Progo</option>
+                <option value="Sleman">Sleman</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+            </optgroup>
+            <optgroup label="DKI Jakarta">
+                <option value="Jakarta Barat">Jakarta Barat</option>
+                <option value="Jakarta Pusat">Jakarta Pusat</option>
+                <option value="Jakarta Selatan">Jakarta Selatan</option>
+                <option value="Jakarta Timur">Jakarta Timur</option>
+                <option value="Jakarta Utara">Jakarta Utara</option>
+                <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+            </optgroup>
+            <optgroup label="Gorontalo">
+                <option value="Boalemo">Boalemo</option>
+                <option value="Bone Bolango">Bone Bolango</option>
+                <option value="Gorontalo">Gorontalo</option>
+                <option value="Gorontalo Utara">Gorontalo Utara</option>
+                <option value="Pohuwato">Pohuwato</option>
+            </optgroup>
+            <optgroup label="Jambi">
+                <option value="Batang Hari">Batang Hari</option>
+                <option value="Bungo">Bungo</option>
+                <option value="Jambi">Jambi</option>
+                <option value="Kerinci">Kerinci</option>
+                <option value="Merangin">Merangin</option>
+                <option value="Muaro Jambi">Muaro Jambi</option>
+                <option value="Sarolangun">Sarolangun</option>
+                <option value="Sungaipenuh">Sungaipenuh</option>
+                <option value="Tanjung Jabung Barat">Tanjung Jabung Barat</option>
+                <option value="Tanjung Jabung Timur">Tanjung Jabung Timur</option>
+                <option value="Tebo">Tebo</option>
+            </optgroup>
+            <optgroup label="Jawa Barat">
+                <option value="Bandung">Bandung</option>
+                <option value="Bandung Barat">Bandung Barat</option>
+                <option value="Banjar">Banjar</option>
+                <option value="Bekasi">Bekasi</option>
+                <option value="Bogor">Bogor</option>
+                <option value="Ciamis">Ciamis</option>
+                <option value="Cianjur">Cianjur</option>
+                <option value="Cimahi">Cimahi</option>
+                <option value="Cirebon">Cirebon</option>
+                <option value="Depok">Depok</option>
+                <option value="Garut">Garut</option>
+                <option value="Indramayu">Indramayu</option>
+                <option value="Karawang">Karawang</option>
+                <option value="Kuningan">Kuningan</option>
+                <option value="Majalengka">Majalengka</option>
+                <option value="Pangandaran">Pangandaran</option>
+                <option value="Purwakarta">Purwakarta</option>
+                <option value="Subang">Subang</option>
+                <option value="Sukabumi">Sukabumi</option>
+                <option value="Sumedang">Sumedang</option>
+                <option value="Tasikmalaya">Tasikmalaya</option>
+            </optgroup>
+            <optgroup label="Jawa Tengah">
+                <option value="Banjarnegara">Banjarnegara</option>
+                <option value="Banyumas">Banyumas</option>
+                <option value="Batang">Batang</option>
+                <option value="Blora">Blora</option>
+                <option value="Boyolali">Boyolali</option>
+                <option value="Brebes">Brebes</option>
+                <option value="Cilacap">Cilacap</option>
+                <option value="Demak">Demak</option>
+                <option value="Grobogan">Grobogan</option>
+                <option value="Jepara">Jepara</option>
+                <option value="Karanganyar">Karanganyar</option>
+                <option value="Kebumen">Kebumen</option>
+                <option value="Kendal">Kendal</option>
+                <option value="Klaten">Klaten</option>
+                <option value="Kudus">Kudus</option>
+                <option value="Magelang">Magelang</option>
+                <option value="Pati">Pati</option>
+                <option value="Pekalongan">Pekalongan</option>
+                <option value="Pemalang">Pemalang</option>
+                <option value="Purbalingga">Purbalingga</option>
+                <option value="Purworejo">Purworejo</option>
+                <option value="Rembang">Rembang</option>
+                <option value="Salatiga">Salatiga</option>
+                <option value="Semarang">Semarang</option>
+                <option value="Sragen">Sragen</option>
+                <option value="Sukoharjo">Sukoharjo</option>
+                <option value="Surakarta">Surakarta (Solo)</option>
+                <option value="Tegal">Tegal</option>
+                <option value="Temanggung">Temanggung</option>
+                <option value="Wonogiri">Wonogiri</option>
+                <option value="Wonosobo">Wonosobo</option>
+            </optgroup>
+            <optgroup label="Jawa Timur">
+                <option value="Bangkalan">Bangkalan</option>
+                <option value="Banyuwangi">Banyuwangi</option>
+                <option value="Batu">Batu</option>
+                <option value="Blitar">Blitar</option>
+                <option value="Bojonegoro">Bojonegoro</option>
+                <option value="Bondowoso">Bondowoso</option>
+                <option value="Gresik">Gresik</option>
+                <option value="Jember">Jember</option>
+                <option value="Jombang">Jombang</option>
+                <option value="Kediri">Kediri</option>
+                <option value="Lamongan">Lamongan</option>
+                <option value="Lumajang">Lumajang</option>
+                <option value="Madiun">Madiun</option>
+                <option value="Magetan">Magetan</option>
+                <option value="Malang">Malang</option>
+                <option value="Mojokerto">Mojokerto</option>
+                <option value="Nganjuk">Nganjuk</option>
+                <option value="Ngawi">Ngawi</option>
+                <option value="Pacitan">Pacitan</option>
+                <option value="Pamekasan">Pamekasan</option>
+                <option value="Pasuruan">Pasuruan</option>
+                <option value="Ponorogo">Ponorogo</option>
+                <option value="Probolinggo">Probolinggo</option>
+                <option value="Sampang">Sampang</option>
+                <option value="Sidoarjo">Sidoarjo</option>
+                <option value="Situbondo">Situbondo</option>
+                <option value="Sumenep">Sumenep</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Trenggalek">Trenggalek</option>
+                <option value="Tuban">Tuban</option>
+                <option value="Tulungagung">Tulungagung</option>
+            </optgroup>
+            <optgroup label="Kalimantan Barat">
+                <option value="Bengkayang">Bengkayang</option>
+                <option value="Kapuas Hulu">Kapuas Hulu</option>
+                <option value="Kayong Utara">Kayong Utara</option>
+                <option value="Ketapang">Ketapang</option>
+                <option value="Kubu Raya">Kubu Raya</option>
+                <option value="Landak">Landak</option>
+                <option value="Melawi">Melawi</option>
+                <option value="Pontianak">Pontianak</option>
+                <option value="Sambas">Sambas</option>
+                <option value="Sanggau">Sanggau</option>
+                <option value="Sekadau">Sekadau</option>
+                <option value="Singkawang">Singkawang</option>
+                <option value="Sintang">Sintang</option>
+            </optgroup>
+            <optgroup label="Kalimantan Selatan">
+                <option value="Balangan">Balangan</option>
+                <option value="Banjar">Banjar</option>
+                <option value="Banjarbaru">Banjarbaru</option>
+                <option value="Banjarmasin">Banjarmasin</option>
+                <option value="Barito Kuala">Barito Kuala</option>
+                <option value="Hulu Sungai Selatan">Hulu Sungai Selatan</option>
+                <option value="Hulu Sungai Tengah">Hulu Sungai Tengah</option>
+                <option value="Hulu Sungai Utara">Hulu Sungai Utara</option>
+                <option value="Kotabaru">Kotabaru</option>
+                <option value="Tabalong">Tabalong</option>
+                <option value="Tanah Bumbu">Tanah Bumbu</option>
+                <option value="Tanah Laut">Tanah Laut</option>
+                <option value="Tapin">Tapin</option>
+            </optgroup>
+            <optgroup label="Kalimantan Tengah">
+                <option value="Barito Selatan">Barito Selatan</option>
+                <option value="Barito Timur">Barito Timur</option>
+                <option value="Barito Utara">Barito Utara</option>
+                <option value="Gunung Mas">Gunung Mas</option>
+                <option value="Kapuas">Kapuas</option>
+                <option value="Katingan">Katingan</option>
+                <option value="Kotawaringin Barat">Kotawaringin Barat</option>
+                <option value="Kotawaringin Timur">Kotawaringin Timur</option>
+                <option value="Lamandau">Lamandau</option>
+                <option value="Murung Raya">Murung Raya</option>
+                <option value="Palangka Raya">Palangka Raya</option>
+                <option value="Pulang Pisau">Pulang Pisau</option>
+                <option value="Seruyan">Seruyan</option>
+                <option value="Sukamara">Sukamara</option>
+            </optgroup>
+            <optgroup label="Kalimantan Timur">
+                <option value="Balikpapan">Balikpapan</option>
+                <option value="Berau">Berau</option>
+                <option value="Bontang">Bontang</option>
+                <option value="Kutai Barat">Kutai Barat</option>
+                <option value="Kutai Kartanegara">Kutai Kartanegara</option>
+                <option value="Kutai Timur">Kutai Timur</option>
+                <option value="Paser">Paser</option>
+                <option value="Penajam Paser Utara">Penajam Paser Utara</option>
+                <option value="Samarinda">Samarinda</option>
+            </optgroup>
+            <optgroup label="Kalimantan Utara">
+                <option value="Bulungan">Bulungan (Bulongan)</option>
+                <option value="Malinau">Malinau</option>
+                <option value="Nunukan">Nunukan</option>
+                <option value="Tana Tidung">Tana Tidung</option>
+                <option value="Tarakan">Tarakan</option>
+            </optgroup>
+            <optgroup label="Kepulauan Riau">
+                <option value="Batam">Batam</option>
+                <option value="Bintan">Bintan</option>
+                <option value="Karimun">Karimun</option>
+                <option value="Kepulauan Anambas">Kepulauan Anambas</option>
+                <option value="Lingga">Lingga</option>
+                <option value="Natuna">Natuna</option>
+                <option value="Tanjung Pinang">Tanjung Pinang</option>
+            </optgroup>
+            <optgroup label="Lampung">
+                <option value="Bandar Lampung">Bandar Lampung</option>
+                <option value="Lampung Barat">Lampung Barat</option>
+                <option value="Lampung Selatan">Lampung Selatan</option>
+                <option value="Lampung Tengah">Lampung Tengah</option>
+                <option value="Lampung Timur">Lampung Timur</option>
+                <option value="Lampung Utara">Lampung Utara</option>
+                <option value="Mesuji">Mesuji</option>
+                <option value="Metro">Metro</option>
+                <option value="Pesawaran">Pesawaran</option>
+                <option value="Pesisir Barat">Pesisir Barat</option>
+                <option value="Pringsewu">Pringsewu</option>
+                <option value="Tanggamus">Tanggamus</option>
+                <option value="Tulang Bawang">Tulang Bawang</option>
+                <option value="Tulang Bawang Barat">Tulang Bawang Barat</option>
+                <option value="Way Kanan">Way Kanan</option>
+            </optgroup>
+            <optgroup label="Maluku">
+                <option value="Ambon">Ambon</option>
+                <option value="Buru">Buru</option>
+                <option value="Buru Selatan">Buru Selatan</option>
+                <option value="Kepulauan Aru">Kepulauan Aru</option>
+                <option value="Maluku Barat Daya">Maluku Barat Daya</option>
+                <option value="Maluku Tengah">Maluku Tengah</option>
+                <option value="Maluku Tenggara">Maluku Tenggara</option>
+                <option value="Maluku Tenggara Barat">Maluku Tenggara Barat</option>
+                <option value="Seram Bagian Barat">Seram Bagian Barat</option>
+                <option value="Seram Bagian Timur">Seram Bagian Timur</option>
+                <option value="Tual">Tual</option>
+            </optgroup>
+            <optgroup label="Maluku Utara">
+                <option value="Halmahera Barat">Halmahera Barat</option>
+                <option value="Halmahera Selatan">Halmahera Selatan</option>
+                <option value="Halmahera Tengah">Halmahera Tengah</option>
+                <option value="Halmahera Timur">Halmahera Timur</option>
+                <option value="Halmahera Utara">Halmahera Utara</option>
+                <option value="Kepulauan Sula">Kepulauan Sula</option>
+                <option value="Pulau Morotai">Pulau Morotai</option>
+                <option value="Ternate">Ternate</option>
+                <option value="Tidore Kepulauan">Tidore Kepulauan</option>
+            </optgroup>
+            <optgroup label="Nanggroe Aceh Darussalam">
+                <option value="Aceh Barat">Aceh Barat</option>
+                <option value="Aceh Barat Daya">Aceh Barat Daya</option>
+                <option value="Aceh Besar">Aceh Besar</option>
+                <option value="Aceh Jaya">Aceh Jaya</option>
+                <option value="Aceh Selatan">Aceh Selatan</option>
+                <option value="Aceh Singkil">Aceh Singkil</option>
+                <option value="Aceh Tamiang">Aceh Tamiang</option>
+                <option value="Aceh Tengah">Aceh Tengah</option>
+                <option value="Aceh Tenggara">Aceh Tenggara</option>
+                <option value="Aceh Timur">Aceh Timur</option>
+                <option value="Aceh Utara">Aceh Utara</option>
+                <option value="Banda Aceh">Banda Aceh</option>
+                <option value="Bener Meriah">Bener Meriah</option>
+                <option value="Bireuen">Bireuen</option>
+                <option value="Gayo Lues">Gayo Lues</option>
+                <option value="Langsa">Langsa</option>
+                <option value="Lhokseumawe">Lhokseumawe</option>
+                <option value="Nagan Raya">Nagan Raya</option>
+                <option value="Pidie">Pidie</option>
+                <option value="Pidie Jaya">Pidie Jaya</option>
+                <option value="Sabang">Sabang</option>
+                <option value="Simeulue">Simeulue</option>
+                <option value="Subulussalam">Subulussalam</option>
+            </optgroup>
+            <optgroup label="Nusa Tenggara Barat">
+                <option value="Bima">Bima</option>
+                <option value="Dompu">Dompu</option>
+                <option value="Lombok Barat">Lombok Barat</option>
+                <option value="Lombok Tengah">Lombok Tengah</option>
+                <option value="Lombok Timur">Lombok Timur</option>
+                <option value="Lombok Utara">Lombok Utara</option>
+                <option value="Mataram">Mataram</option>
+                <option value="Sumbawa">Sumbawa</option>
+                <option value="Sumbawa Barat">Sumbawa Barat</option>
+            </optgroup>
+            <optgroup label="Nusa Tenggara Timur">
+                <option value="Alor">Alor</option>
+                <option value="Belu">Belu</option>
+                <option value="Ende">Ende</option>
+                <option value="Flores Timur">Flores Timur</option>
+                <option value="Kupang">Kupang</option>
+                <option value="Lembata">Lembata</option>
+                <option value="Manggarai">Manggarai</option>
+                <option value="Manggarai Barat">Manggarai Barat</option>
+                <option value="Manggarai Timur">Manggarai Timur</option>
+                <option value="Nagekeo">Nagekeo</option>
+                <option value="Ngada">Ngada</option>
+                <option value="Rote Ndao">Rote Ndao</option>
+                <option value="Sabu Raijua">Sabu Raijua</option>
+                <option value="Sikka">Sikka</option>
+                <option value="Sumba Barat">Sumba Barat</option>
+                <option value="Sumba Barat Daya">Sumba Barat Daya</option>
+                <option value="Sumba Tengah">Sumba Tengah</option>
+                <option value="Sumba Timur">Sumba Timur</option>
+                <option value="Timor Tengah Selatan">Timor Tengah Selatan</option>
+                <option value="Timor Tengah Utara">Timor Tengah Utara</option>
+            </optgroup>
+            <optgroup label="Papua">
+                <option value="Asmat">Asmat</option>
+                <option value="Biak Numfor">Biak Numfor</option>
+                <option value="Boven Digoel">Boven Digoel</option>
+                <option value="Deiyai">Deiyai (Deliyai)</option>
+                <option value="Dogiyai">Dogiyai</option>
+                <option value="Intan Jaya">Intan Jaya</option>
+                <option value="Jayapura">Jayapura</option>
+                <option value="Jayawijaya">Jayawijaya</option>
+                <option value="Keerom">Keerom</option>
+                <option value="Kepulauan Yapen">Kepulauan Yapen (Yapen Waropen)</option>
+                <option value="Lanny Jaya">Lanny Jaya</option>
+                <option value="Mamberamo Raya">Mamberamo Raya</option>
+                <option value="Mamberamo Tengah">Mamberamo Tengah</option>
+                <option value="Mappi">Mappi</option>
+                <option value="Merauke">Merauke</option>
+                <option value="Mimika">Mimika</option>
+                <option value="Nabire">Nabire</option>
+                <option value="Nduga">Nduga</option>
+                <option value="Paniai">Paniai</option>
+                <option value="Pegunungan Bintang">Pegunungan Bintang</option>
+                <option value="Puncak">Puncak</option>
+                <option value="Puncak Jaya">Puncak Jaya</option>
+                <option value="Sarmi">Sarmi</option>
+                <option value="Supiori">Supiori</option>
+                <option value="Tolikara">Tolikara</option>
+                <option value="Waropen">Waropen</option>
+                <option value="Yahukimo">Yahukimo</option>
+                <option value="Yalimo">Yalimo</option>
+            </optgroup>
+            <optgroup label="Papua Barat">
+                <option value="Fakfak">Fakfak</option>
+                <option value="Kaimana">Kaimana</option>
+                <option value="Manokwari">Manokwari</option>
+                <option value="Manokwari Selatan">Manokwari Selatan</option>
+                <option value="Maybrat">Maybrat</option>
+                <option value="Pegunungan Arfak">Pegunungan Arfak</option>
+                <option value="Raja Ampat">Raja Ampat</option>
+                <option value="Sorong">Sorong</option>
+                <option value="Sorong Selatan">Sorong Selatan</option>
+                <option value="Tambrauw">Tambrauw</option>
+                <option value="Teluk Bintuni">Teluk Bintuni</option>
+                <option value="Teluk Wondama">Teluk Wondama</option>
+            </optgroup>
+            <optgroup label="Riau">
+                <option value="Bengkalis">Bengkalis</option>
+                <option value="Dumai">Dumai</option>
+                <option value="Indragiri Hilir">Indragiri Hilir</option>
+                <option value="Indragiri Hulu">Indragiri Hulu</option>
+                <option value="Kampar">Kampar</option>
+                <option value="Kepulauan Meranti">Kepulauan Meranti</option>
+                <option value="Kuantan Singingi">Kuantan Singingi</option>
+                <option value="Pekanbaru">Pekanbaru</option>
+                <option value="Pelalawan">Pelalawan</option>
+                <option value="Rokan Hilir">Rokan Hilir</option>
+                <option value="Rokan Hulu">Rokan Hulu</option>
+                <option value="Siak">Siak</option>
+            </optgroup>
+            <optgroup label="Sulawesi Barat">
+                <option value="Majene">Majene</option>
+                <option value="Mamasa">Mamasa</option>
+                <option value="Mamuju">Mamuju</option>
+                <option value="Mamuju Utara">Mamuju Utara</option>
+                <option value="Polewali Mandar">Polewali Mandar</option>
+            </optgroup>
+            <optgroup label="Sulawesi Selatan">
+                <option value="Bantaeng">Bantaeng</option>
+                <option value="Barru">Barru</option>
+                <option value="Bone">Bone</option>
+                <option value="Bulukumba">Bulukumba</option>
+                <option value="Enrekang">Enrekang</option>
+                <option value="Gowa">Gowa</option>
+                <option value="Jeneponto">Jeneponto</option>
+                <option value="Luwu">Luwu</option>
+                <option value="Luwu Timur">Luwu Timur</option>
+                <option value="Luwu Utara">Luwu Utara</option>
+                <option value="Makassar">Makassar</option>
+                <option value="Maros">Maros</option>
+                <option value="Palopo">Palopo</option>
+                <option value="Pangkajene Kepulauan">Pangkajene Kepulauan</option>
+                <option value="Parepare">Parepare</option>
+                <option value="Pinrang">Pinrang</option>
+                <option value="Selayar">Selayar (Kepulauan Selayar)</option>
+                <option value="Sidenreng Rappang">Sidenreng Rappang/Rapang</option>
+                <option value="Sinjai">Sinjai</option>
+                <option value="Soppeng">Soppeng</option>
+                <option value="Takalar">Takalar</option>
+                <option value="Tana Toraja">Tana Toraja</option>
+                <option value="Toraja Utara">Toraja Utara</option>
+                <option value="Wajo">Wajo</option>
+            </optgroup>
+            <optgroup label="Sulawesi Tengah">
+                <option value="Banggai">Banggai</option>
+                <option value="Banggai Kepulauan">Banggai Kepulauan</option>
+                <option value="Buol">Buol</option>
+                <option value="Donggala">Donggala</option>
+                <option value="Morowali">Morowali</option>
+                <option value="Palu">Palu</option>
+                <option value="Parigi Moutong">Parigi Moutong</option>
+                <option value="Poso">Poso</option>
+                <option value="Sigi">Sigi</option>
+                <option value="Tojo Una-Una">Tojo Una-Una</option>
+                <option value="Toli-Toli">Toli-Toli</option>
+            </optgroup>
+            <optgroup label="Sulawesi Tenggara">
+                <option value="Bau-Bau">Bau-Bau</option>
+                <option value="Bombana">Bombana</option>
+                <option value="Buton">Buton</option>
+                <option value="Buton Utara">Buton Utara</option>
+                <option value="Kendari">Kendari</option>
+                <option value="Kolaka">Kolaka</option>
+                <option value="Kolaka Utara">Kolaka Utara</option>
+                <option value="Konawe">Konawe</option>
+                <option value="Konawe Selatan">Konawe Selatan</option>
+                <option value="Konawe Utara">Konawe Utara</option>
+                <option value="Muna">Muna</option>
+                <option value="Wakatobi">Wakatobi</option>
+            </optgroup>
+            <optgroup label="Sulawesi Utara">
+                <option value="Bitung">Bitung</option>
+                <option value="Bolaang Mongondow">Bolaang Mongondow (Bolmong)</option>
+                <option value="Bolaang Mongondow Selatan">Bolaang Mongondow Selatan</option>
+                <option value="Bolaang Mongondow Timur">Bolaang Mongondow Timur</option>
+                <option value="Bolaang Mongondow Utara">Bolaang Mongondow Utara</option>
+                <option value="Kepulauan Sangihe">Kepulauan Sangihe</option>
+                <option value="Kepulauan Siau Tagulandang Biaro">Kepulauan Siau Tagulandang Biaro (Sitaro)</option>
+                <option value="Kepulauan Talaud">Kepulauan Talaud</option>
+                <option value="Kotamobagu">Kotamobagu</option>
+                <option value="Manado">Manado</option>
+                <option value="Minahasa">Minahasa</option>
+                <option value="Minahasa Selatan">Minahasa Selatan</option>
+                <option value="Minahasa Tenggara">Minahasa Tenggara</option>
+                <option value="Minahasa Utara">Minahasa Utara</option>
+                <option value="Tomohon">Tomohon</option>
+            </optgroup>
+            <optgroup label="Sumatera Barat">
+                <option value="Agam">Agam</option>
+                <option value="Bukittinggi">Bukittinggi</option>
+                <option value="Dharmasraya">Dharmasraya</option>
+                <option value="Kepulauan Mentawai">Kepulauan Mentawai</option>
+                <option value="Lima Puluh Koto">Lima Puluh Koto/Kota</option>
+                <option value="Padang">Padang</option>
+                <option value="Padang Panjang">Padang Panjang</option>
+                <option value="Padang Pariaman">Padang Pariaman</option>
+                <option value="Pariaman">Pariaman</option>
+                <option value="Pasaman">Pasaman</option>
+                <option value="Pasaman Barat">Pasaman Barat</option>
+                <option value="Payakumbuh">Payakumbuh</option>
+                <option value="Pesisir Selatan">Pesisir Selatan</option>
+                <option value="Sawah Lunto">Sawah Lunto</option>
+                <option value="Sijunjung">Sijunjung (Sawah Lunto Sijunjung)</option>
+                <option value="Solok">Solok</option>
+                <option value="Solok Selatan">Solok Selatan</option>
+                <option value="Tanah Datar">Tanah Datar</option>
+            </optgroup>
+            <optgroup label="Sumatera Selatan">
+                <option value="Banyuasin">Banyuasin</option>
+                <option value="Empat Lawang">Empat Lawang</option>
+                <option value="Lahat">Lahat</option>
+                <option value="Lubuk Linggau">Lubuk Linggau</option>
+                <option value="Muara Enim">Muara Enim</option>
+                <option value="Musi Banyuasin">Musi Banyuasin</option>
+                <option value="Musi Rawas">Musi Rawas</option>
+                <option value="Ogan Ilir">Ogan Ilir</option>
+                <option value="Ogan Komering Ilir">Ogan Komering Ilir</option>
+                <option value="Ogan Komering Ulu">Ogan Komering Ulu</option>
+                <option value="Ogan Komering Ulu Selatan">Ogan Komering Ulu Selatan</option>
+                <option value="Ogan Komering Ulu Timur">Ogan Komering Ulu Timur</option>
+                <option value="Pagar Alam">Pagar Alam</option>
+                <option value="Palembang">Palembang</option>
+                <option value="Prabumulih">Prabumulih</option>
+            </optgroup>
+            <optgroup label="Sumatera Utara">
+                <option value="Asahan">Asahan</option>
+                <option value="Batu Bara">Batu Bara</option>
+                <option value="Binjai">Binjai</option>
+                <option value="Dairi">Dairi</option>
+                <option value="Deli Serdang">Deli Serdang</option>
+                <option value="Gunungsitoli">Gunungsitoli</option>
+                <option value="Humbang Hasundutan">Humbang Hasundutan</option>
+                <option value="Karo">Karo</option>
+                <option value="Labuhan Batu">Labuhan Batu</option>
+                <option value="Labuhan Batu Selatan">Labuhan Batu Selatan</option>
+                <option value="Labuhan Batu Utara">Labuhan Batu Utara</option>
+                <option value="Langkat">Langkat</option>
+                <option value="Mandailing Natal">Mandailing Natal</option>
+                <option value="Medan">Medan</option>
+                <option value="Nias">Nias</option>
+                <option value="Nias Barat">Nias Barat</option>
+                <option value="Nias Selatan">Nias Selatan</option>
+                <option value="Nias Utara">Nias Utara</option>
+                <option value="Padang Lawas">Padang Lawas</option>
+                <option value="Padang Lawas Utara">Padang Lawas Utara</option>
+                <option value="Padang Sidempuan">Padang Sidempuan</option>
+                <option value="Pakpak Bharat">Pakpak Bharat</option>
+                <option value="Pematang Siantar">Pematang Siantar</option>
+                <option value="Samosir">Samosir</option>
+                <option value="Serdang Bedagai">Serdang Bedagai</option>
+                <option value="Sibolga">Sibolga</option>
+                <option value="Simalungun">Simalungun</option>
+                <option value="Tanjung Balai">Tanjung Balai</option>
+                <option value="Tapanuli Selatan">Tapanuli Selatan</option>
+                <option value="Tapanuli Tengah">Tapanuli Tengah</option>
+                <option value="Tapanuli Utara">Tapanuli Utara</option>
+                <option value="Tebing Tinggi">Tebing Tinggi</option>
+                <option value="Toba Samosir">Toba Samosir</option>
+            </optgroup>
+        </template>
+        <!-- Scripts -->
+        <script defer src="/__/firebase/7.2.2/firebase-app.js"></script>
+        <script defer src="/__/firebase/7.2.2/firebase-auth.js"></script>
+        <script defer src="/__/firebase/7.2.2/firebase-analytics.js"></script>
+        <script defer src="/__/firebase/7.2.2/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/init.js"></script>
+        <script defer src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script>
+        <script defer src="/sales/script.js"></script>
+    </body>
+</html>

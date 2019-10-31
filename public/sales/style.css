@@ -1,0 +1,151 @@
+/* Copyright 2019 Itang Sanjana */
+
+/* Init */
+:root {
+    --mdc-theme-primary: #212121;
+    --mdc-theme-on-primary: #aaa;
+}
+html {
+    overflow-y: scroll;
+}
+body {
+    color: #212121;
+    margin: unset;
+}
+embed, img, object, svg, video {
+    height: auto;
+    max-width: 100%;
+}
+embed, img, object, svg, textarea, video {
+    vertical-align: middle;
+}
+input, textarea {
+    box-sizing: border-box;
+}
+
+/* Header */
+.mdc-icon-button svg,
+.mdc-icon-button img {
+    border-radius: 50%;
+    vertical-align: unset;
+}
+.mdc-top-app-bar {
+    background-color: rgba(255, 255, 255, .87);
+    color: #212121;
+}
+.mdc-top-app-bar .mdc-top-app-bar__action-item:not(:disabled),
+.mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(:disabled) {
+    color: rgba(33, 33, 33, 1);
+}
+.mdc-top-app-bar .mdc-top-app-bar__action-item:disabled,
+.mdc-top-app-bar .mdc-top-app-bar__navigation-icon:disabled {
+    color: rgba(0, 0, 0, .38);
+    color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));
+}
+.mdc-top-app-bar__title {
+    color: unset;
+}
+
+/* Main */
+.mdc-button > * {
+    pointer-events: none;
+}
+.mdc-card__media-content.material-icons-outlined {
+    align-items: center;
+    display: grid;
+    font-size: 4em;
+    justify-items: center;
+}
+.mdc-card > div:not([class]) > div {
+    vertical-align: middle;
+    width: 100%;
+}
+.mdc-layout-grid__inner {
+    list-style-type: none;
+    padding-left: unset;
+}
+.mdc-layout-grid__cell.mdc-button {
+    height: unset;
+    min-height: 56px;
+}
+.mdc-list-group > h2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.mdc-list--avatar-list .mdc-list-item__graphic {
+    background-color: rgba(0, 0, 0, 0.38);
+    color: #fafafa;
+}
+.mdc-list-item__meta.material-icons-outlined {
+    font-family: 'Material Icons Outlined';
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-transform: none;
+}
+.mdc-select__native-control[multiple],
+.mdc-select__selected-text[multiple] {
+    height: unset;
+    min-height: 56px;
+}
+.mdc-text-field__input[type=file] {
+    line-height: unset;
+}
+.ds-input label {
+    background-color: #f5f5f5;
+    color: rgba(0,0,0,.6);
+    display: block;
+    padding: 1rem 1rem 0;
+}
+.ds-select--multiple {
+    height: unset;
+    min-height: 56px;
+}
+.ds-select--multiple label {
+    background-color: #f5f5f5;
+}
+main section:first-child {
+    text-align: center;
+}
+main section:first-child figure {
+    margin: unset;
+}
+main section:first-child img {
+    border-radius: 50%;
+}
+main .mdc-card__media-content {
+    align-items: center;
+    display: grid;
+    justify-items: center;
+}
+main .mdc-card__media-content img {
+    border-radius: 50%;
+}
+
+/* Footer */
+
+/* Utils */
+
+/* Phone */
+@media (max-width: 479px) {}
+
+/* Tablet */
+@media (min-width: 480px) and (max-width: 839px) {
+    article .mdc-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop */
+@media (min-width: 840px) {
+    section.mdc-layout-grid__cell--span-8 {
+        grid-column-start: 3
+    }
+
+    article .mdc-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

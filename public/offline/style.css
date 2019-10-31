@@ -1,0 +1,85 @@
+/* Copyright 2019 Itang Sanjana */
+
+/* Init */
+:root {
+    --mdc-theme-primary: #212121;
+    --mdc-theme-on-primary: #aaa;
+}
+html {
+    overflow-y: scroll;
+}
+body {
+    color: #212121;
+    margin: unset;
+}
+embed, img, object, svg, video {
+    height: auto;
+    max-width: 100%;
+}
+embed, img, object, svg, textarea, video {
+    vertical-align: middle;
+}
+input, textarea {
+    box-sizing: border-box;
+}
+
+/* Header */
+.mdc-icon-button svg,
+.mdc-icon-button img {
+    border-radius: 50%;
+    vertical-align: unset;
+}
+.mdc-top-app-bar {
+    background-color: rgba(255, 255, 255, .87);
+    color: #212121;
+}
+.mdc-top-app-bar .mdc-top-app-bar__action-item:not(:disabled),
+.mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(:disabled) {
+    color: rgba(33, 33, 33, 1);
+}
+.mdc-top-app-bar .mdc-top-app-bar__action-item:disabled,
+.mdc-top-app-bar .mdc-top-app-bar__navigation-icon:disabled {
+    color: rgba(0, 0, 0, .38);
+    color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));
+}
+.mdc-top-app-bar__title {
+    color: unset;
+}
+
+/* Main */
+.mdc-card__media-content.material-icons-outlined {
+    align-items: center;
+    display: grid;
+    font-size: 4em;
+    justify-items: center;
+}
+.mdc-layout-grid__inner {
+    list-style-type: none;
+    padding-left: unset;
+}
+main section:first-child {
+    text-align: center;
+}
+main section:first-child figure {
+    margin: unset;
+}
+main section:first-child img {
+    border-radius: 50%;
+}
+
+/* Footer */
+
+/* Utils */
+
+/* Phone */
+@media (max-width: 479px) {}
+
+/* Tablet */
+@media (min-width: 480px) and (max-width: 839px) {}
+
+/* Desktop */
+@media (min-width: 840px) {
+    section.mdc-layout-grid__cell--span-8 {
+        grid-column-start: 3
+    }
+}

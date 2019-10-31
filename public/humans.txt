@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+  Itang Sanjana -- Developer -- @ItangSanjana
+
+# THANKS
+  YME
+
+# TECHNOLOGY COLOPHON
+  HTML, CSS, JS
