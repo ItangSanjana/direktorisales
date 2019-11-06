@@ -37,6 +37,14 @@ const enabledShare = () => {
     buttonShare.disabled = false;
 };
 
+const initImgResize = (src, size) => {
+    if (src.endsWith('.jpg')) {
+        return `${src}?sz=${size}`;
+    } else {
+        return `${src}=s${size}-c`;
+    }
+};
+
 const initMDCSelect = () => {
     const MDCSelect = mdc.select.MDCSelect;
     const mdcSelects = Array.from(document.querySelectorAll('.mdc-select'), select => new MDCSelect(select));
@@ -93,7 +101,7 @@ window.addEventListener('load', () => {
                 buttonUser.querySelector('a').href = `/pengguna/${user.uid}`;
                 buttonUser.querySelector('a').title = buttonUser.querySelector('a').getAttribute('aria-label');
                 buttonUser.querySelector('img').alt = buttonUser.querySelector('a').title;
-                buttonUser.querySelector('img').src = `${user.photoURL}?sz=24`;
+                buttonUser.querySelector('img').src = initImgResize(user.photoURL, 24);
 
                 buttonSignIn.parentNode.replaceChild(buttonUser, buttonSignIn);
             }).catch(showError);
@@ -122,7 +130,7 @@ window.addEventListener('load', () => {
                     query.docs.map(doc => {
                         const list = document.importNode(template[3].content, true);
                         list.querySelector('img').alt = doc.data().namaTampilan;
-                        list.querySelector('img').src = `${doc.data().urlFoto}?sz=96`;
+                        list.querySelector('img').src = initImgResize(doc.data().urlFoto, 96);
                         list.querySelector('.mdc-card__action--button').href = `/sales/${doc.id}`;
                         list.querySelector('.mdc-button__label').textContent = list.querySelector('img').alt;
 
@@ -283,7 +291,7 @@ window.addEventListener('load', () => {
                     document.querySelector('meta[name=description]').setAttribute('content', `${doc.data().namaTampilan}, Sales resmi ${doc.data().kategori} ${doc.data().merek} ${doc.data().kota.join(', ')} - ${doc.data().provinsi}`);
 
                     mainSection[0].querySelector('img').alt = doc.data().namaTampilan;
-                    mainSection[0].querySelector('img').src = `${doc.data().urlFoto}?sz=192`;
+                    mainSection[0].querySelector('img').src = initImgResize(doc.data().urlFoto, 192);
                     mainSection[0].querySelector('h1').textContent = doc.data().namaTampilan;
                     mainSection[0].querySelector('p').textContent = `Sales resmi ${doc.data().kategori} ${doc.data().merek} ${doc.data().kota.join(', ')} - ${doc.data().provinsi}`;
 
@@ -316,7 +324,7 @@ window.addEventListener('load', () => {
                 } else {
                     if (!!user && user.uid == arrPathname[1]) {
                         mainSection[0].querySelector('img').alt = `${user.displayName} (${user.email})`;
-                        mainSection[0].querySelector('img').src = `${user.photoURL}?sz=192`;
+                        mainSection[0].querySelector('img').src = initImgResize(user.photoURL, 192);
                         mainSection[0].querySelector('h1').textContent = `Halo, ${user.displayName}`;
                         mainSection[0].querySelector('p').textContent = 'Kelola info Anda agar Direktori Sales berfungsi dengan lebih baik untuk Anda';
 

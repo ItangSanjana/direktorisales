@@ -12,14 +12,9 @@
       "**/_*",
       "README.md"
     ],
-    "rewrites": [
-      {"source": "/blog/*", "destination": "/blog/index.html"},
-      {"source": "/pengguna/*", "destination": "/pengguna/index.html"},
-      {"source": "/sales/*", "destination": "/sales/index.html"}
-    ],
     "headers": [
       {
-        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "source": "**/*.@(eot|font.css|otf|ttc|ttf|woff|woff2)",
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
@@ -28,7 +23,7 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|css|js|json)",
+        "source": "**/*.@(css|gif|jpeg|jpg|js|json|png|woff|woff2)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -44,6 +39,20 @@
             "value": "no-cache"
           }
         ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/blog/*",
+        "destination": "/blog/index.html"
+      },
+      {
+        "source": "/pengguna/*",
+        "destination": "/pengguna/index.html"
+      },
+      {
+        "source": "/sales/*",
+        "destination": "/sales/index.html"
       }
     ],
     "cleanUrls": true,
