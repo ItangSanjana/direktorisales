@@ -37,8 +37,16 @@ const enabledShare = () => {
     buttonShare.disabled = false;
 };
 
+const initImgResize = (src, size) => {
+    if (src.endsWith('.jpg')) {
+        return `${src}?sz=${size}`;
+    } else {
+        return `${src}=s${size}-c`;
+    }
+};
+
 window.addEventListener('load', () => {
-    if ('content' in document.createElement('template') != true) {
+    if ('content' in document.createElement('template') !== true) {
         openSnackbar('Peramban Anda belum mendukung penggunaan template HTML. Silahkan perbarui atau gunakan yang modern.');
         return;
     }
@@ -66,18 +74,14 @@ window.addEventListener('load', () => {
 
     fireAuth.onAuthStateChanged(user => {
         if (!!user) {
-            user.getIdTokenResult().then(idTokenResult => {
-                user.isAdmin = !!idTokenResult.claims.admin;
+            const buttonUser = document.importNode(template[0].content, true);
+            buttonUser.querySelector('a').href = `/pengguna/${user.uid}`;
+            buttonUser.querySelector('a').setAttribute('aria-label', `${user.displayName} (${user.email})`);
+            buttonUser.querySelector('a').title = buttonUser.querySelector('a').getAttribute('aria-label');
+            buttonUser.querySelector('img').alt = buttonUser.querySelector('a').title;
+            buttonUser.querySelector('img').src = initImgResize(user.photoURL, 24);
 
-                const buttonUser = document.importNode(template[0].content, true);
-                buttonUser.querySelector('a').href = `/pengguna/${user.uid}`;
-                buttonUser.querySelector('a').setAttribute('aria-label', `${user.displayName} (${user.email})`);
-                buttonUser.querySelector('a').title = buttonUser.querySelector('a').getAttribute('aria-label');
-                buttonUser.querySelector('img').alt = buttonUser.querySelector('a').title;
-                buttonUser.querySelector('img').src = `${user.photoURL}?sz=24`;
-
-                buttonSignIn.parentNode.replaceChild(buttonUser, buttonSignIn);
-            }).catch(showError);
+            buttonSignIn.parentNode.replaceChild(buttonUser, buttonSignIn);
         } else {
             buttonSignIn.addEventListener('click', () => {
                 const provider = new firebase.auth.GoogleAuthProvider();

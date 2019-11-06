@@ -37,6 +37,14 @@ const enabledShare = () => {
     buttonShare.disabled = false;
 };
 
+const initImgResize = (src, size) => {
+    if (src.endsWith('.jpg')) {
+        return `${src}?sz=${size}`;
+    } else {
+        return `${src}=s${size}-c`;
+    }
+};
+
 window.addEventListener('load', () => {
     if ('content' in document.createElement('template') != true) {
         openSnackbar('Peramban Anda belum mendukung penggunaan template HTML. Silahkan perbarui atau gunakan yang modern.');
@@ -76,7 +84,7 @@ window.addEventListener('load', () => {
                 buttonUser.querySelector('a').setAttribute('aria-label', `${user.displayName} (${user.email})`);
                 buttonUser.querySelector('a').title = buttonUser.querySelector('a').getAttribute('aria-label');
                 buttonUser.querySelector('img').alt = buttonUser.querySelector('a').title;
-                buttonUser.querySelector('img').src = `${user.photoURL}?sz=24`;
+                buttonUser.querySelector('img').src = initImgResize(user.photoURL, 24);
 
                 buttonSignIn.parentNode.replaceChild(buttonUser, buttonSignIn);
             }).catch(showError);
@@ -97,7 +105,7 @@ window.addEventListener('load', () => {
 
                     if (user.isAdmin || user.uid == arrPathname[1]) {
                         mainSection[0].querySelector('img').alt = `${user.displayName} (${user.email})`;
-                        mainSection[0].querySelector('img').src = `${user.photoURL}?sz=192`;
+                        mainSection[0].querySelector('img').src = initImgResize(user.photoURL, 192);
                         mainSection[0].querySelector('h1').textContent = `Halo, ${user.displayName}`;
 
                         const article = document.importNode(template[3].content, true);
